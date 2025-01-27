@@ -1,17 +1,29 @@
 package com.lichu.Backend_Canchas.Model;
 
+import java.util.Collection;
+import java.util.List;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Builder.Default;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
-@Getter
-@Setter
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,15 +34,18 @@ public class User {
     @Size(min = 8, max = 60)
     @NotBlank
     private String password;
+    @Builder.Default
+    @Column(nullable = false, columnDefinition = "varchar(255) default 'User'")
+    private String Role = "User";
 
-    public User() {
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(Role));
     }
 
-    public User(Long id, String email, String password) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
+    @Override
+    public String getUsername() {
+        return email;
     }
-
 
 }

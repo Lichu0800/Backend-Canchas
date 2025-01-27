@@ -16,21 +16,14 @@ public class UserController {
     @CrossOrigin(origins = "http://localhost:3000") // Cambia a la URL de tu frontend
     @PostMapping("/register")
     public ResponseEntity<?> registeUser(@Valid @RequestBody User usuario) {
-        userServ.registerUser(usuario);
-        return ResponseEntity.ok("Usuario creado con exito");
+        return ResponseEntity.ok(userServ.register(usuario));
 
     }
 
     @CrossOrigin(origins = "http://localhost:3000") // Cambia a la URL de tu frontend
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@Valid @RequestBody User usuario) {
-        Boolean auth = userServ.checkLogin(usuario);
-        if (auth) {
-            System.out.println("Autenticado");
-            return ResponseEntity.ok("Se inicio sesion correctamente");
-        } else {
-            return ResponseEntity.status(401).body("El mail y la contraseña no coincide");
-        }
+        return ResponseEntity.ok(userServ.login(usuario));
 
     }
 
