@@ -1,28 +1,24 @@
-# Backend - Autenticación JWT con Spring Boot
+#  🖥️ Backend - Autenticación JWT con Spring Boot
 
 ![Java](https://img.shields.io/badge/Java-11%2B-blue)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-2.5.0-brightgreen)
 ![JWT](https://img.shields.io/badge/JWT-Secure-blueviolet)
 
-> Proyecto de backend para manejo de autenticación mediante JWT. Este servicio ofrece endpoints para el registro y login de usuarios, generando tokens JWT para proteger rutas y recursos.
-> ![Link del Front-End](https://github.com/Lichu0800/Front-End-Login)
+## 📝 Descripcion
+  
+Proyecto de backend para manejo de autenticación mediante JWT. Este servicio ofrece endpoints para el registro y login de usuarios, generando tokens JWT para proteger rutas y recursos.
+[Link del Front-End](https://github.com/Lichu0800/Front-End-Login)
 
 ---
 
-## Tabla de Contenidos
+## 🧩 Tabla de Contenidos
 
 - [Características](#características)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Requisitos](#requisitos)
-- [Instalación y Configuración](#instalación-y-configuración)
-- [Uso](#uso)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Contribuir](#contribuir)
-- [Licencia](#licencia)
 
 ---
 
-## Características
+## ✏️ Características
 
 - Registro y autenticación de usuarios.
 - Generación y validación de tokens JWT.
@@ -31,7 +27,7 @@
 
 ---
 
-## Tecnologías Utilizadas
+## 💻 Tecnologías Utilizadas
 
 - **Java**
 - **Spring Boot**
